@@ -7,7 +7,7 @@ clientRouter(
   // options - see clientRouter docs
   {
     reactRootElementId: 'react-root',
-    isomorphicStyleLoader: true
+    isomorphicStyleLoader: true,
   }
 );
 
