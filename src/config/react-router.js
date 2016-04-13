@@ -1,7 +1,7 @@
 const path = require('path');
 
 
-module.exports.reactRouter = {
+module.exports.react = {
 
   // the resolved path to your react-router routes file
   // it's best not to clutter this file with anything except your routes
