@@ -6,6 +6,7 @@ const propTypes = {
 };
 
 function Home() {
+    console.log('home')
   return (
     <div className={s.root}>
       Home Page Content

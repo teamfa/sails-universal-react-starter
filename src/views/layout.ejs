@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%- (locals.react ? locals.react.title : locals.title) || 'My Sails App' %></title>
-  <!-- Viewport mobile tag for sensible mobile support -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title><%- (locals.react ? locals.react.title : locals.title) || 'My Sails App' %></title>
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <%if (locals.react && locals.react.state) { %>
-  <script async type="text/javascript"><%- 'window.__ReactInitState__ = ' + locals.react.state + ';' %></script>
-  <% } %>
+    <% if (locals.react && locals.react.inlineStyles) { %>
+    <style type="text/css"><%- locals.react.inlineStyles %></style>
+    <% } %>
 
-  <%if (locals.react && locals.react.inlineStyles) { %>
-  <style type="text/css"><%- locals.react.inlineStyles %></style>
-  <% } %>
-
-  <!-- #css -->
-  <!--<link rel="stylesheet" href="/styles/[hash].importer.css">-->
-  <!-- #end -->
+    <!-- #css -->
+    <!--<link rel="stylesheet" href="/styles/[hash].importer.css">-->
+    <!-- #end -->
 </head>
-
 <body>
 <div id="react-root"><%- body %></div>
-<!-- #templates -->
-<!-- #end -->
-
+<% if (locals.react && locals.react.state) { %>
+    <script type="text/javascript"><%- 'window.__ReactInitState__ = ' + locals.react.state + ';' %></script>
+<% } %>
 <!-- #scripts -->
 <!-- #end -->
 </body>

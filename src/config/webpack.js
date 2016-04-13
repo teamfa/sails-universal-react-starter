@@ -89,7 +89,8 @@ const defaultConfig = {
             sourceMap: DEBUG,
             // CSS Modules https://github.com/css-modules/css-modules
             modules: true,
-            localIdentName: DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
+            localIdentName: DEBUG ? '[name]_[local]_[hash:base64:5]' : '[hash:base64:4]',
+            // localIdentName: DEBUG ? '[name]_[local]' : '[hash:base64:4]',
             // CSS Nano http://cssnano.co/options/
             minimize: !DEBUG
           })}`,
@@ -179,6 +180,7 @@ let developmentClient = extend(true, {}, defaultConfig, {
         warnings: VERBOSE
       }
     }),
+
     new webpack.optimize.AggressiveMergingPlugin(),
 
     new LinkerPlugin({
@@ -187,8 +189,7 @@ let developmentClient = extend(true, {}, defaultConfig, {
       output: './dist/views/layout.ejs',
       data: {
         css: '',
-        templates: '',
-        scripts: '<script src="//localhost:3000/bundle-[hash].js"></script>'
+        scripts: '    <script async src="//localhost:3000/bundle-[hash].js"></script>'
       }
     })
   ]
@@ -233,7 +234,7 @@ const developmentServerBuild = extend(true, {}, defaultConfig2, {
       }
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    
+
     new webpack.BannerPlugin('require("source-map-support").install();', {
       raw: true, entryOnly: false
     })
