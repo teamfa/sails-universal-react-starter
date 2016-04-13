@@ -8,6 +8,20 @@ import Path from 'path';
 const originalRequire = Module.prototype.require;
 const originalResolve = Path.resolve;
 
+// TODO
+// not sure how to fix this otherwise,
+// without these webpack dupes them, even with the de-dupe plugin
+// only an issue when using npm link on sails-hook-react-router as devDependencies exist
+const requireOverrides = [
+  'react',
+  'react-dom/server',
+  'isomorphic-style-loader',
+  'react-router',
+  'history/lib/createLocation',
+  'history/lib/createMemoryHistory',
+  'sails/lib/hooks/views/res.view',
+];
+
 global.__SERVER__ = true;
 global.__CLIENT__ = false;
 global.__DEBUG__ = true;
@@ -34,7 +48,11 @@ Module.prototype.require = function require(...args) {
     if (args[0].includes('/dist/node_modules/')) {
       args[0] = args[0].replace('/dist/node_modules/', '/node_modules/');
     }
+    if (requireOverrides.includes(args[0])) {
+      args[0] = originalResolve(__dirname, `./../node_modules/${args[0]}`);
+    }
   }
+
   return originalRequire.apply(this, args);
 };
 

@@ -10,7 +10,7 @@ export default (
   <Router history={browserHistory}>
     <Route path="/" component={Layout}>
       <IndexRoute component={Home} />
-      <Route path="articles" component={Articles} />
+      <Route path="articles" component={Articles} routingPreference="sails" />
       <Route path="*" component={NotFound} />
     </Route>
   </Router>

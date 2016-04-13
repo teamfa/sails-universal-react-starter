@@ -39,7 +39,7 @@
     "react-router": "^2.0.1",
     "sails": "~0.12.3",
     "sails-disk": "~0.10.9",
-    "sails-hook-react-router": "^0.1.1",
+    "sails-hook-react-router": "^0.1.2",
     "sails-hook-webpack": "^2.0.3",
     "sass-loader": "^3.2.0",
     "url-loader": "^0.5.7",
@@ -56,7 +56,7 @@
   },
   "scripts": {
     "start": "node dist/app.js --port=1338",
-    "dev": "node dist/app.js --verbose",
+    "debug": "node dist/app.js --verbose --port=1338",
     "postinstall": "npm run build-prod",
     "build": "babel src --out-dir dist --copy-files",
     "build-prod": "NODE_ENV=production babel src --out-dir dist --copy-files",

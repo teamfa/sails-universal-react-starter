@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Nav from './partials/nav.js';
-import withStyles from 'withStyles';
 import Normalise from 'styles/normalise.css';
+import withStyles from 'withStyles';
 
 const propTypes = {
   children: PropTypes.element.isRequired,

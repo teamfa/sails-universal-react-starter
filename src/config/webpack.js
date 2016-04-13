@@ -34,23 +34,31 @@ const defaultConfig = {
   },
 
   cache: DEBUG,
-  debug: DEBUG,
+  debug: false,
 
   stats: {
+    assets: false,
     colors: true,
     reasons: DEBUG,
     hash: VERBOSE,
-    version: VERBOSE,
+    version: false,
     timings: true,
-    chunks: VERBOSE,
-    chunkModules: VERBOSE,
-    cached: VERBOSE,
-    cachedAssets: VERBOSE
+    chunks: false,
+    chunkModules: false,
+    cached: false,
+    cachedAssets: false
   },
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.ProvidePlugin({
+    //   withStyles: "isomorphic-style-loader/lib/withStyles",
+    // })
   ],
+
+  resolveLoader: {
+    modulesDirectories: [resolve(__dirname, './../../node_modules')],
+  },
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.json', '.scss', '.css'],
@@ -60,7 +68,11 @@ const defaultConfig = {
     ],
     alias: {
       withStyles: 'isomorphic-style-loader/lib/withStyles',
-      react: 'react',
+      react: resolve(__dirname, './../../node_modules/react'),
+      'react-router': resolve(__dirname, './../../node_modules/react-router'),
+      'react-dom': resolve(__dirname, './../../node_modules/react-dom'),
+      'react-dom/server': resolve(__dirname, './../../node_modules/react-dom/server'),
+      'history': resolve(__dirname, './../../node_modules/history'),
       'isomorphic-style-loader': 'isomorphic-style-loader'
     }
   },
