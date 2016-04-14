@@ -67,7 +67,10 @@
     "type": "git",
     "url": "git://github.com/teamfa/sails-universal-react-starter.git"
   },
-  "author": "Mike Diarmid",
+  "author": {
+    "name": "Mike Diarmid",
+    "email": "mike.diarmid@teamfa.com"
+  },
   "contributors": [
     "Elliot Hesp",
     "Mike Diarmid"
