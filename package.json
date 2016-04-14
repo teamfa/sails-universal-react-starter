@@ -65,8 +65,12 @@
   "main": "/dist/app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Mike/sails-universal-react-starter.git"
+    "url": "git://github.com/teamfa/sails-universal-react-starter.git"
   },
-  "author": "Mike",
+  "author": "Mike Diarmid",
+  "contributors": [
+    "Elliot Hesp",
+    "Mike Diarmid"
+  ],
   "license": ""
 }
