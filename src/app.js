@@ -4,6 +4,7 @@ require('babel-polyfill');
 // this assumes your build directory is /dist
 import Module from 'module';
 import Path from 'path';
+import slash from 'slash';
 
 const originalRequire = Module.prototype.require;
 const originalResolve = Path.resolve;
@@ -35,7 +36,7 @@ if (!console.debug) {
 // override resolve to intercept invalid sails node_module paths
 Path.resolve = function resolve(...args) {
   if (args.length >= 2 && typeof args[0] === 'string' && typeof args[1] === 'string') {
-    if (args[0].endsWith('/dist') && args[1] === 'node_modules') {
+    if (slash(args[0]).endsWith('/dist') && args[1] === 'node_modules') {
       args[1] = './../node_modules'; // force resolve to go up one dir
     }
   }
