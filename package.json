@@ -60,7 +60,7 @@
     "debug": "node dist/app.js --verbose --port=1338",
     "postinstall": "npm run build-prod",
     "build": "babel src --out-dir dist --copy-files",
-    "build-prod": "NODE_ENV=production babel src --out-dir dist --copy-files",
+    "build-prod": "NODE_ENV=production& SET NODE_ENV=production& babel src --out-dir dist --copy-files",
     "build-watch": "babel src --watch --out-dir dist --copy-files --ignore \"/assets/\""
   },
   "main": "/dist/app.js",
