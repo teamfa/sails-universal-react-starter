@@ -4,6 +4,8 @@ A full ES2015 universal/isomorphic [SailsJS](http://sailsjs.org) + [ReactJS](htt
 Powered with [Webpack](https://webpack.github.io/) ([`sails-hook-webpack`](https://github.com/teamfa/sails-hook-webpack)),  [React Router](https://github.com/reactjs/react-router) ([`sails-hook-react-router`](https://github.com/teamfa/sails-hook-react-router)),
 and [Babel](https://babeljs.io), the project features Hot Module Reloading (HMR), automatic `react-router` routes on the server and hot reloading of SailsJS routes, controllers and services.
 
+**Note:** this is still a work in progress, but the general concept works.
+
 ### Quick Start
 
 - Git clone/fork or download the project.
