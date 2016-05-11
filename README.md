@@ -1,4 +1,4 @@
-# sails-universal-react-starter
+# Sails Universal React Starter
 
 A full ES2015 universal/isomorphic [SailsJS](http://sailsjs.org) + [ReactJS](https://facebook.github.io/react) starter project with server and client side rendering, routing and styles.
 Powered with [Webpack](https://webpack.github.io/) ([`sails-hook-webpack`](https://github.com/teamfa/sails-hook-webpack)),  [React Router](https://github.com/reactjs/react-router) ([`sails-hook-react-router`](https://github.com/teamfa/sails-hook-react-router)),
