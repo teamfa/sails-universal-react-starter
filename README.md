@@ -12,7 +12,7 @@ and [Babel](https://babeljs.io), the project features Hot Module Reloading (HMR)
 - `npm install`.
 - `npm run build-watch` (watch the `/src` directory for changes and build to `/dist`).
 - `npm start` (start the SailsJS app from `/dist`).
-- Open [http://localhost:1337](http://localhost:1337) and enjoy!
+- Open [http://localhost:1338](http://localhost:1338) and enjoy!
 
 > Currently only has a webpack dev setup. No production.
 
